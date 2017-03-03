@@ -31,7 +31,6 @@
 		<property name="connectionTimeoutInMs" value="${jdbc.bcp.connectionTimeoutInMs}" />
 	</bean>
 	
-	<!-- myBatis文件 -->
 	<bean class="org.mybatis.spring.SqlSessionFactoryBean">
 		<property name="configLocation" value="classpath:META-INF/mybatis/fund-configuration.xml" />
 		<property name="mapperLocations" value="classpath*:META-INF/mybatis/mapper/fund/*.xml" />

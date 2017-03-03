@@ -50,11 +50,6 @@
 				</exclusion>
 			</exclusions>
 		</dependency>
-		<dependency>
-			<groupId>com.tongbanjie.legends</groupId>
-			<artifactId>legends-client</artifactId>
-			<version>2.0</version>
-		</dependency>
 	</dependencies>
 
 </project>
