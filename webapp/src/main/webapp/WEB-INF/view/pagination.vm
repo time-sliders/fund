@@ -1,0 +1,81 @@
+<div class="pagination">
+  <div id="pager_COM0_20" class="pager">
+    <div class="page-control">
+      #if ($!totalPageSize > 4)
+        #if ($!pageNo > 1)
+          <span class="page-previous">
+			#set($prePage = $!pageNo - 1)
+            <a href="javascript:void(0)" data-curPage="$prePage" data-totalPageCount="$!totalPageSize">上一页</a>
+          </span>
+        #end
+        #set($endSkip = 2)
+        #set($beginSkip = $endSkip)
+        #set($end =  $!pageNo + $endSkip)
+        #if($!pageNo <= 4)
+          #set($begin = 1)
+          #if($end  > $!totalPageSize)
+            #set($end = $!totalPageSize)
+          #end
+          #foreach($item in [$begin..$end])
+            #if($item == $!pageNo)
+              <a href="javascript:void(0)" class="page-button page-cur-button">$item</a>
+            #else
+              <a href="javascript:void(0);" data-curPage="$item" data-totalPageCount="$!totalPageSize"  class="page-button">$item</a>
+            #end
+          #end
+          #if($end <= ($!totalPageSize - 1))
+            ...
+            <a href="javascript:void(0)" class="page-button" data-totalPageCount="$!totalPageSize" data-curPage="$!totalPageSize">$!totalPageSize</a>
+          #end
+        #else
+          <a href="javascript:void(0)" class="page-button" data-totalPageCount="$!totalPageSize" data-curPage="1">1</a>...
+          #set($begin = $!pageNo - $beginSkip)
+          #if($end  > $!totalPageSize)
+            #set($end = $!totalPageSize)
+          #end
+          #foreach($item in [$begin..$end])
+            #if($item == $!pageNo)
+              <a href="javascript:void(0)" class="page-button page-cur-button">$item</a>
+            #else
+              <a href="javascript:void(0)" class="page-button" data-totalPageCount="$!totalPageSize" data-curPage="$item">$item</a>
+            #end
+          #end
+          #if($end < ($!totalPageSize - 1))
+            ...
+          #end
+          #if($end <= ($!totalPageSize - 1))
+            <a href="javascript:void(0)" class="page-button" data-totalPageCount="$!totalPageSize" data-curPage="$!totalPageSize">$!totalPageSize</a>
+          #end
+        #end
+        #if ($!pageNo < $!totalPageSize)
+		  #set($nextPage = $!pageNo + 1 )
+          <span class="page-next"><a href="javascript:void(0)"data-totalPageCount="$!totalPageSize" data-curPage="$nextPage">下一页</a></span>
+        #end
+      #else
+        #if ($!pageNo > 1)
+		  #set($prePage = $!pageNo - 1)
+          <span class="page-previous">
+            <a href="javascript:void(0)"data-totalPageCount="$!totalPageSize" data-curPage="$prePage">上一页</a>
+          </span>
+        #end
+        <span class="page-button-content">
+        #if($!totalPageSize > 1)
+    		#foreach($item in [1..$!totalPageSize])
+              #if($item == $!pageNo)
+                <a href="javascript:void(0)" class="page-button page-cur-button">$item</a>
+              #else
+                <a href="javascript:void(0)" class="page-button"data-totalPageCount="$!totalPageSize" data-curPage="$item">$item</a>
+              #end
+    		#end
+		#end
+        </span>
+        #if ($!pageNo < $!totalPageSize)
+		  #set($nextPage = $!pageNo + 1 )
+          <span class="page-next">
+            <a href="javascript:void(0)" data-totalPageCount="$!totalPageSize" data-curPage="$nextPage">下一页</a>
+          </span>
+        #end
+      #end         
+    </div>
+  </div>
+</div>

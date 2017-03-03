@@ -1,0 +1,49 @@
+@charset "utf-8";
+/* CSS Document */
+
+/*初始化浏览器默认样式开始*/
+body,div,dl,dt,dd,ul,ol,li,h1,h2,h3,h4,h5,h6,pre,form,fieldset,input,textarea,p,blockquote,th,td{margin:0px;padding:0px;}
+table{border-collapse:collapse;border-spacing:0;}
+fieldset,img{border:0;}
+address,caption,cite,code,dfn,em,strong,th,var{font-style:normal;font-weight:normal;}
+ol,ul{list-style:none}
+caption,th{text-align:left;}
+h1,h2,h3,h4,h5,h6{font-size:100%;font-weight:normal;}
+q:before,q:after{content:''}
+abbr,acronym{border:0;}
+small,big{font-size:medium;}
+b{font-weight:normal;}
+i{font-style:normal;}
+a{color:#000;text-decoration:none;}
+iframe{border:none;}
+input[type="button"], input[type="submit"], input[type="reset"], input[type="file"]::-webkit-file-upload-button, button{padding:0px;}
+input[type=subimt],input[type=button]{-webkit-appearance: none;}
+body{-webkit-text-size-adjust:none;text-size-adjust:none;font-family: "Helvetica Neue", Helvetica, STHeiTi, sans-serif;}
+a, img {-webkit-touch-callout: none;}
+
+/*公用的文本样式开始*/
+.fs14{font-size:14px;}
+.fs12{font-size:12px;}
+/*公用的文本样式结束*/
+
+
+/*公用的对齐样式开始*/
+.ct{margin-left:auto;margin-right:auto;}
+.tc{text-align:center;}
+/*公用的对齐样式结束*/
+
+/*公用的元素大小样式开始*/
+.wh100{width:100%;}
+.ht100{height:100%;}
+/*公用的元素大小样式结束*/
+
+/*公用的布局样式开始*/
+.fl{float:left;}
+.fr{float:right;}
+.none{display:none;}
+.block{display:block;}
+.pr{position:relative;}
+.pa{position:absolute;}
+.pf{position:fixed;}
+.clearfix{clear:left;}
+/*公用的元素大小样式结束*/

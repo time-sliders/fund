@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+  <!--[if lt IE 7 ]><html class="ie ie6" lang="en"> <![endif]-->
+  <!--[if IE 7 ]><html class="ie ie7" lang="en"> <![endif]-->
+  <!--[if IE 8 ]><html class="ie ie8" lang="en"> <![endif]-->
+  <!--[if (gte IE 9)|!(IE)]><!-->
+  <html class="not-ie" lang="zh-cn">
+  <!--<![endif]-->
+  #set($staticPrefix="http://res.tongbanjie.com/build")
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <title>铜板街-让你的利息翻十倍</title>
+    <meta name="keywords" content="铜板街，理财，投资，投资理财，理财产品，个人理财，基金理财，家庭理财，网上理财，网络理财，金融理财，高收益，平安承保，随时取现">
+    <meta name="description" content="铜板街是安全、稳定、高收益的综合理财交易平台,国内首家综合投资理财产品交易APP,中国平安保险提供账户资金安全全额承保，精选保本、低风险、高收益理财产品，资金通过实名银行卡同卡进出，随时取现，灵活便捷，服务免费，个人投资理财首选APP产品，2013中国互联网优秀创新产品奖，2014互联网金融百强品牌。">
+    <link type="images/x-icon" rel="shortcut icon" href="$staticPrefix/imgs/favorite.ico">
+    <!--[if lt ie 9]>
+      <script src="$staticPrefix/common/html5.js"></script>
+    <![endif]-->    
+	<script charset="utf-8" src="$staticPrefix/common/sea.js" ></script>
+    <script type="text/javascript" src="$staticPrefix/common/sea-config.js"></script>
+    <script type="text/javascript">
+      seajs.use(["util/css/bootstrap.min.css", "tbj/funductdesc/index_new.css"]);
+    </script>
+	<!--[if lt ie 9]>
+    <link rel="stylesheet" type="text/css" href="$staticPrefix/common/base-ie.min.css">
+    <![endif]-->
+  </head>
+  <body>
+    <header class="navbar-relative-top tbj-header"></header>
+    <script type="text/javascript">
+      seajs.use("common/header");
+    </script>
+    <!-- 内容 -->
+    <!--产品浮动吊顶 start -->
+    #set($funduct=$data.funduct)
+	#set($type=$data.type)
+	#set($ops=$data.ops)
+	
+	#set($profit=$funduct.profit*100)
+	#set($profit=$numberTool.format("0.00",$profit))
+	
+	<div class="float-ceiling">
+      <div class="container">
+        <div class="fl">
+          <ul>
+            <li class="proc-title">$!funduct.name</li>
+            <li class="split">|</li>
+            <li>预期年化收益：<big>$profit%</big></li>
+            <li class="split">|</li>
+            <li>理财期限：$data.periodValue</li>
+          </ul>
+        </div>
+        <div class="fr">
+          <ul>
+            <li>
+              <label>购买金额：</label>
+              <input type="text" class="form-control ipt-money" name="amt" id="inputmoney" placeholder="$numberTool.format("0",$!funduct.leastAmount)/份，1份起">
+            </li>
+            <li>
+              <div class="alert-warning">
+                <i class="icon icon-error error-img"></i>
+                <div class="error-msg"></div>
+              </div>
+            </li>
+			<li>
+              #if($funduct.status == "1")
+				<a href="javascript:void(0)" class="btn btn-danger btn-buy" >$!{ops.purchaseButtonCaption}</a>
+			  #else
+				<a href="javascript:void(0)" class="btn btn-danger disabled" >$!{ops.purchaseButtonCaption}</a>
+			  #end			 
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <!--产品浮动吊顶 end -->
+    <!--面包屑 end -->
+    <section class="container">
+      <div class="funduct-base-info">
+        <div class="p-img fl">
+          <img src="$staticPrefix/imgs/funductdesc/${funduct.taId}/${funduct.id}/banner.jpg" width="408px" height="368px" >
+        </div>
+        <div class="p-profit fr">
+          <h4 class="p-title">$!funduct.name</h4>
+          <div class="p-desc icon-bg icon-bg06">
+            <span class="tip">预期年化收益率</span>
+            <big>$profit</big>
+            <small>%</small>
+			#if($ops.promotionDescription && $ops.promotionDescription != "")
+				<span class="reward">∙ $ops.promotionDescription ∙</span>
+			#end
+            <span class="rl">1</span>
+          </div>
+          <div class="row">
+            <div class="col-md col-md-4">
+              <em>理财期限</em>
+              <h5>$data.periodValue</h5>
+            </div>
+            <div class="col-md col-md-4">
+              <em>起购金额</em>
+              <h5>$numberTool.format("0",$!funduct.leastAmount)元</h5>
+            </div>
+            <div class="col-md col-md-4">
+              <em>风险程度</em>
+			  #if($funduct.riskLevelName == '1R')
+				<h5>1R <span  class="f14">超低风险</span> <a href="javascript:void(0);" class="ShowRiskBody" title="适合做资产配置安全垫">[?]</a></h5>
+			  #elseif($funduct.riskLevelName == '2R')
+				<h5>2R <span  class="f14">较低风险</span> <a href="javascript:void(0);" class="ShowRiskBody" title="适合做部分资产配置">[?]</a></h5>
+			  #elseif($funduct.riskLevelName == '3R')
+				<h5>3R <span  class="f14">有一定风险</span> <a href="javascript:void(0);" class="ShowRiskBody" title="请根据个人实际情况做资产配置">[?]</a></h5>
+			  #end              
+            </div>
+          </div>
+		  <form action="http://trade.tongbanjie.com/trade/web/member/submitorder" name="submitorder" class="form-horizontal first-form" role="form">
+		  	<input type="hidden" name="tid" value="$funduct.taId" />
+			<input type="hidden" name="pid" value="$funduct.id" />
+			<input type="hidden" name="type" value="$type" />
+            <div class="alert-warning">
+              <div class="error-msg"></div>
+            </div>
+            <dl>
+              <dt class="mt5">
+                <label>投资金额</label>
+              </dt>
+              <dd>
+				<input type="text" class="ipt-money" name="amt" id="inputmoney" placeholder="$numberTool.format("0",$!funduct.leastAmount)/份，1份起">
+				<label>元</label>
+				#if($funduct.status == "1")
+					#if($ops.status.value == 2)
+						#if($funduct.steppingAmount)
+							#set($part = $funduct.remainAmount / $funduct.steppingAmount)
+							#set($part = $numberTool.format("0",$part))							
+							<span class="last-part">剩余份额${part}</span>
+						#else
+							<label class="last-part">剩余 ${funduct.remainAmount}元</label>
+						#end
+					#end
+				#end         
+              </dd>
+            </dl>
+            <div class="i-btn">
+			  #if($funduct.status == "1")
+				<a href="javascript:void(0)" class="btn btn-danger btn-lg btn-buy">$!ops.purchaseButtonCaption</a>
+			  #else
+				<a href="javascript:void(0)" class="btn btn-danger btn-lg disabled">$!ops.purchaseButtonCaption</a>
+			  #end			  
+              <a  class="banks" href="javascript:void(0)">查看银行卡限额</a>
+              <div class="bank-list" style="display:none">
+                #foreach($bank in $data.bankList)
+                <div class="bank-item">
+                  <input type="hidden"  class="bankCode" value="$bank.bankCode">
+                  <input type="hidden"  class="bankName" value="$bank.bankName">
+                  <input type="hidden"  class="bankDesc" value="$bank.payLimitDescription">
+                </div>
+			  #end
+              </div>
+            </div>
+          </form>
+        </div>
+      </div>
+	  #parse("/web/control/${funduct.id}.vm")        		
+    </section>
+    <!-- 底部  start -->
+    <footer></footer>
+    <!-- 底部  end -->    
+    <script type="text/javascript">
+      seajs.use(["underscore", "tbj/funductdesc/index"]);
+    </script>
+	#include("statistics.vm")
+  </body>
+</html>

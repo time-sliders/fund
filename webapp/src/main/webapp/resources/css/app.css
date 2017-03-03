@@ -1,0 +1,29 @@
+@charset "utf-8";
+/* CSS Document */
+body{background-color:#e5e5e5;font-family:"华文黑体";}
+header{position:relative;left:0px;top:0px;text-align:center;padding:14px 0px;background-color:#fff;color:#434343;}
+header a{position:absolute;left:0px;top:16px;display:block;color:#6699cc;padding-left:20px;background:url(images/backArrow.jpg) no-repeat;background-size:9px 15px;background-position:5px 0px;}
+table{width:100%;margin-top:10px;font-size:14px;}
+table tr td{border:1px solid #dad9dc;}
+
+table tr td div img{width:14px;height:14px;vertical-align:top;margin-top:1px;margin-right:2px;}
+table tr td:nth-child(1){width:20%;background-color:#eee;color:#707070;text-align:center;padding:10px 0.5%;}
+table tr td div h2{vertical-align:middle;}
+table tr td:nth-child(2){width:77%;background-color:#fff;color:#434343;padding:10px 1%;}
+.secondInfo td:nth-child(2){padding-right:5px;}
+.supportBank td:nth-child(2){vertical-align:top;padding-top:0px;padding-bottom:0px;}
+
+
+.supportBank td:nth-child(2) div,.secondInfo td:nth-child(2) div,.thirdInfo td:nth-child(2) div{border-bottom:1px solid #dad9dc;padding:10px 0px 7px 0px;}
+.supportBank td:nth-child(2) div.last,.secondInfo td:nth-child(2) div.last,.thirdInfo td:nth-child(2) div.last{border-bottom:none;}
+.secondInfo .insurance td:nth-child(2),.thirdInfo .insurance td:nth-child(2){padding:0px;}
+
+.secondInfo .insurance td:nth-child(2) div,.thirdInfo .insurance td:nth-child(2) div{padding:10px 1%;}
+.secondInfo .insurance td:nth-child(2) div:after,.thirdInfo .insurance td:nth-child(2) div:after{content:'.';clear:both;display:block;height:0;visibility:hidden;line-height:0}
+.secondInfo .insurance td:nth-child(2) div strong,.thirdInfo .insurance td:nth-child(2) div strong{float:left;margin-left:2px;text-align:center;line-height:20px;}
+.secondInfo .insurance td:nth-child(2) div em,.thirdInfo .insurance td:nth-child(2) div em{float:right;text-align:center;line-height:20px;}
+.notice{color:#cc0000;}
+
+.supportBank td:nth-child(2) p{font-size:13px;color:#707070;margin-top:3px;margin-left:16px;text-indent:0px;}
+.secondInfo p{text-indent:0px;line-height:16px;}
+.desc{padding-bottom: 20px;}
