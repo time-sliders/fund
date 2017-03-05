@@ -3,10 +3,6 @@
 <configuration>
 	<settings>
 		<setting name="cacheEnabled" value="false" />
-
 	</settings>
 
-	<typeAliases>
-		<typeAlias type="com.tongbanjie.commons.lang.Paginator" alias="Paginator" />
-	</typeAliases>
 </configuration>

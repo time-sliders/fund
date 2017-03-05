@@ -109,4 +109,16 @@ public enum FundBizTypeEnum {
         this.confirmCode = confirmCode;
         this.bizName = bizName;
     }
+
+    public String getApplyCode() {
+        return applyCode;
+    }
+
+    public String getConfirmCode() {
+        return confirmCode;
+    }
+
+    public String getBizName() {
+        return bizName;
+    }
 }

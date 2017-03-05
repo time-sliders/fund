@@ -7,6 +7,7 @@ import com.noob.fund.annotation.Type;
 import com.noob.fund.enums.AgencyCertificateTypeEnum;
 import com.noob.fund.enums.DataType;
 import com.noob.fund.enums.PersonalCertificateTypeEnum;
+import com.noob.storage.utils.DateUtil;
 
 import java.io.Serializable;
 
@@ -95,7 +96,7 @@ public class AccountInfo implements Serializable {
     @Type(DataType.A)
     @Length(8)
     @Necessary(true)
-    @DatePattern("YYYYMMDD")
+    @DatePattern(DateUtil.yyyyMMdd)
     private Integer transactionDate;
 
     /**
