@@ -1,4 +1,4 @@
-package com.noob.fund.model;
+package com.noob.fund.model.apply;
 
 import com.noob.fund.annotation.DatePattern;
 import com.noob.fund.annotation.Length;
