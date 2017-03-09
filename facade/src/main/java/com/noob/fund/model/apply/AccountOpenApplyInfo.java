@@ -11,16 +11,25 @@ import com.noob.storage.utils.DateUtil;
 import java.io.Serializable;
 
 /**
- * 账户信息
- *
- * 涉及到的交易:
- * 开户申请(001)
- * 账户信息修改申请(003)
+ * 账户信息数据
+ * <p>
+ * 开户申请(001),账户信息修改申请(003)
+ * <p>
+ * 开户是基金注册登记人为投资人开立基金账户的业务。投资人在参与开放式基金认购、申购、
+ * 赎回之前必须到基金管理人在各地的直销网点或代理点申请开立账户。账户用于记载投资人的
+ * 基金所有权及其变更。
+ * </p>
+ * <p>
+ * 账户信息修改是指对投资人基金账户信息进行修改。
+ * </p>
+ * <p>
+ * 申请更新账户信息是基金管理人要求注册登记人对账户信息进行补充和完善的申请
+ * </p>
  *
  * @author luyun
  * @since 2017.03.03
  */
-public class AccountInfo implements Serializable {
+public class AccountOpenApplyInfo implements Serializable {
 
     private static final long serialVersionUID = 1L;
 

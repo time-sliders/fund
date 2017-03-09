@@ -16,7 +16,7 @@ import java.io.Serializable;
  * @author luyun
  * @since 2017.03.06
  */
-public class OpenAccountConfirmInfo implements Serializable {
+public class AccountOpenConfirmInfo implements Serializable {
 
     private static final long serialVersionUID = 1L;
 
@@ -122,7 +122,6 @@ public class OpenAccountConfirmInfo implements Serializable {
     /**
      * TA确认交易流水号
      */
-    @DatePattern(DateUtil.hhMMss)
     @Type(DataType.A)
     @Length(20)
     @Necessary(false)
