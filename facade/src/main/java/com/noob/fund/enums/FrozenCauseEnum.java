@@ -14,7 +14,7 @@ public enum  FrozenCauseEnum {
 
     PLEDGE_FREEZE(2, "质押冻结"),
 
-    PLEDGE_JUDICIAL_FREEZE(3, "质押、司法 双重冻结"),
+    PLEDGE_JUDICIAL_FREEZE(3, "质押、司法双重冻结"),
 
     COUNTER_JUDICIAL_FREEZE(4, "柜台、司法双重冻结");
 
