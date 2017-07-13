@@ -23,8 +23,6 @@
 	
 	<import resource="classpath:META-INF/spring/fund-cache.xml" />
 
-	<import resource="classpath:META-INF/spring/fund-dubbo.xml" />
-	
 	<bean id="shallowEtagHeaderFilter" class="org.springframework.web.filter.ShallowEtagHeaderFilter" />
 
 </beans>
